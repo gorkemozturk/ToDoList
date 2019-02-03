@@ -14,19 +14,19 @@ export class TodosComponent implements OnInit {
   ngOnInit() {
     this.todos = [
       {
-        id: 1,
-        title: 'This is a first event.',
-        isCompleted: true
+        ID: 1,
+        Title: 'This is a first event.',
+        IsCompleted: true
       },
       {
-        id: 2,
-        title: 'This is a second event.',
-        isCompleted: false
+        ID: 2,
+        Title: 'This is a second event.',
+        IsCompleted: false
       },
       {
-        id: 3,
-        title: 'This is a third event.',
-        isCompleted: true
+        ID: 3,
+        Title: 'This is a third event.',
+        IsCompleted: true
       }
     ]
   }

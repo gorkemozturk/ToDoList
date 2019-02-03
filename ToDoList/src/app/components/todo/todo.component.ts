@@ -17,7 +17,7 @@ export class TodoComponent implements OnInit {
   setClass() {
     let cls = {
       todo: true,
-      'is-completed': this.todo.isCompleted
+      'is-completed': this.todo.IsCompleted
     }
 
     return cls;
