@@ -39,4 +39,18 @@ export class TodoComponent implements OnInit {
     );
   }
 
+  onDelete(todo: Todo) {
+    if(confirm('Are you sure to delete the event?')) {
+      this.todoService.DeleteTodo(todo).subscribe(
+        res => {
+          this.toastr.warning('You have been deleted the event successfully.');
+          this.todoService.GetTodos();
+        },
+        err => {
+          console.log(err)
+        }
+      );
+    }
+  }
+
 }

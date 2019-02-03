@@ -24,4 +24,8 @@ export class TodoService {
     return this.http.put(this.todoURL + '/todos/' + todoData.ID, todoData)
   }
 
+  DeleteTodo(todoData: Todo) {
+    return this.http.delete(this.todoURL + '/todos/' + todoData.ID);
+  }
+
 }
