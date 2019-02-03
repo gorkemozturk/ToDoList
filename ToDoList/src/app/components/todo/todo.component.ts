@@ -1,5 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Todo } from 'src/app/models/todo.model';
+import { NgForm } from '@angular/forms';
+import { TodoService } from 'src/app/services/todo.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-todo',
@@ -9,7 +12,7 @@ import { Todo } from 'src/app/models/todo.model';
 export class TodoComponent implements OnInit {
   @Input() todo: Todo;
 
-  constructor() { }
+  constructor(private todoService: TodoService, private toastr: ToastrService) { }
 
   ngOnInit() {
   }
@@ -21,6 +24,19 @@ export class TodoComponent implements OnInit {
     }
 
     return cls;
+  }
+
+  onToggle(todo: Todo) {
+    todo.IsCompleted = !todo.IsCompleted;
+
+    this.todoService.PutTodo(todo).subscribe(
+      res => {
+        this.toastr.success('You have been updated the event successfully.');
+      },
+      err => {
+        console.log(err)
+      }
+    );
   }
 
 }

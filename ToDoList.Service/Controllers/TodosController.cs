@@ -61,7 +61,8 @@ namespace ToDoList.Service.Controllers
                 return BadRequest();
             }
 
-            _context.Entry(todo).State = EntityState.Modified;
+            var todo_ = await _context.Todos.FirstOrDefaultAsync(t => t.ID == id);
+            todo_.IsCompleted = !todo_.IsCompleted;
 
             try
             {

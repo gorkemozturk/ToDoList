@@ -1,5 +1,5 @@
 <ul class="list-group">
-  <app-todo *ngFor="let todo of todos" [todo]="todo"></app-todo>
+  <app-todo *ngFor="let todo of todoService.todos" [todo]="todo"></app-todo>
 </ul>
 
 <app-create-todo></app-create-todo>

@@ -21,6 +21,7 @@ export class CreateTodoComponent implements OnInit {
         console.log(res);
         this.toastr.success('You have been submitted the event successfully.');
         form.form.reset();
+        this.todoService.GetTodos();
       },
       err => {
         console.log(err)
